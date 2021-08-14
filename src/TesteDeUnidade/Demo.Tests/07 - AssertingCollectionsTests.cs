@@ -24,7 +24,6 @@ namespace Demo.Tests
             Assert.Contains("OOP", funcionario.Habilidades);
         }
 
-
         [Fact]
         public void Funcionario_Habilidades_JuniorNaoDevePossuirHabilidadeAvancada()
         {
@@ -34,7 +33,6 @@ namespace Demo.Tests
             // Assert
             Assert.DoesNotContain("Microservices", funcionario.Habilidades);
         }
-
 
         [Fact]
         public void Funcionario_Habilidades_SeniorDevePossuirTodasHabilidades()
