@@ -12,7 +12,6 @@ namespace Features.Tests
             _clienteTestsFixture = clienteTestsFixture;
         }
         
-
         [Fact(DisplayName = "Novo Cliente Válido")]
         [Trait("Categoria", "Cliente Bogus Testes")]
         public void Cliente_NovoCliente_DeveEstarValido()
