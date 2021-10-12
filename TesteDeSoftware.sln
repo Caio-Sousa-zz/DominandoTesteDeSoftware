@@ -27,7 +27,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Vendas.Domain.Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Vendas.Domain", "src\02 - TDD\src\NerdStore.Vendas.Domain\NerdStore.Vendas.Domain.csproj", "{68269251-0817-475E-BC7A-444E7D17D5FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Core", "src\02 - TDD\src\NerdStore.Core\NerdStore.Core.csproj", "{6B716952-D2CF-4D1D-BF05-37F46510A8CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Core", "src\02 - TDD\src\NerdStore.Core\NerdStore.Core.csproj", "{6B716952-D2CF-4D1D-BF05-37F46510A8CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{296A7C8C-6D6A-4D7F-97D6-3872B29A3AA2}"
+	ProjectSection(SolutionItems) = preProject
+		data.txt = data.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
