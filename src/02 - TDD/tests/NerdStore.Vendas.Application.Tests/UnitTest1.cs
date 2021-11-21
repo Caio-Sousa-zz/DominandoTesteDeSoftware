@@ -1,14 +1,10 @@
 using System;
-using Xunit;
+using System.Collections.Generic;
 
 namespace NerdStore.Vendas.Application.Tests
 {
     public class UnitTest1
     {
-        [Fact]
-        public void Test1()
-        {
-
-        }
+        
     }
 }
