@@ -18,7 +18,7 @@ namespace NerdStore.Core.DomainObjects
 
         public void AdicionarEvento(Event evento)
         {
-            _notificacoes = _notificacoes ?? new List<Event>();
+            _notificacoes ??= new List<Event>();
             _notificacoes.Add(evento);
         }
 

@@ -37,17 +37,17 @@ namespace NerdStore.Vendas.Application.Tests.Pedidos
             var pedidoCommand = new AdicionarItemPedidoCommand(Guid.NewGuid(),
                 Guid.NewGuid(), "Produto Teste", 2, 100);
 
-           // _mocker.GetMock<IPedidoRepository>().Setup(r => r.UnitOfWork.Commit()).Returns(Task.FromResult(true));
+            _mocker.GetMock<IPedidoRepository>().Setup(r => r.UnitOfWork.Commit()).Returns(Task.FromResult(true));
 
             // Act
             var result = await _pedidoHandler.Handle(pedidoCommand, CancellationToken.None);
 
             // Assert
             Assert.True(result);
+
             _mocker.GetMock<IPedidoRepository>().Verify(r=>r.Adicionar(It.IsAny<Pedido>()), Times.Once);
-           // _mocker.GetMock<IPedidoRepository>().Verify(r => r.UnitOfWork.Commit(), Times.Once);
-            _mocker.GetMock<IMediator>().Verify(r => r.Publish(It.IsAny<INotification>(), CancellationToken.None), 
-                Times.Once);
+           
+            _mocker.GetMock<IPedidoRepository>().Verify(r => r.UnitOfWork.Commit(), Times.Once);
         }
 
         //[Fact(DisplayName = "Adicionar Novo Item Pedido Rascunho com Sucesso")]

@@ -26,10 +26,7 @@ namespace NerdStore.Vendas.Application.Commands
 
             _pedidoRepository.Adicionar(pedido);
 
-            await _mediator.Publish(new PedidoItemAdicionadoEvent(pedido.ClienteId, pedido.Id, message.ProdutoId,
-                                     message.Nome, message.ValorUnitario, message.Quantidade), cancellationToken);
 
-            return true;
             //if (!ValidarComando(message)) return false;
 
             //var pedido = await _pedidoRepository.ObterPedidoRascunhoPorClienteId(message.ClienteId);
@@ -59,10 +56,10 @@ namespace NerdStore.Vendas.Application.Commands
             //    _pedidoRepository.Atualizar(pedido);
             //}
 
-            //pedido.AdicionarEvento(new PedidoItemAdicionadoEvent(pedido.ClienteId, pedido.Id, message.ProdutoId, 
-            //    message.Nome, message.ValorUnitario, message.Quantidade));
+            pedido.AdicionarEvento(new PedidoItemAdicionadoEvent(pedido.ClienteId, pedido.Id, message.ProdutoId,
+                message.Nome, message.ValorUnitario, message.Quantidade));
 
-            //return await _pedidoRepository.UnitOfWork.Commit();
+            return await _pedidoRepository.UnitOfWork.Commit();
         }
 
         //private bool ValidarComando(Command message)
