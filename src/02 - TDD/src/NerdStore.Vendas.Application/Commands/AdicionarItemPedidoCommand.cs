@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 using NerdStore.Vendas.Domain;
 using System;
-using FluentValidation.Results;
+using NerdStore.Core.Messages;
 
 namespace NerdStore.Vendas.Application.Commands
 {
-    public class AdicionarItemPedidoCommand 
+    public class AdicionarItemPedidoCommand :Command
     {
         public Guid ClienteId { get; set; }
         public Guid ProdutoId { get; set; }
@@ -22,9 +22,11 @@ namespace NerdStore.Vendas.Application.Commands
             ValorUnitario = valorUnitario;
         }
 
-        public  bool EhValido()
+        public override bool EhValido()
         {
-            return new AdicionarItemPedidoValidation().Validate(this).IsValid;
+            ValidationResult = new AdicionarItemPedidoValidation().Validate(this);
+
+            return ValidationResult.IsValid;
         }
     }
 
