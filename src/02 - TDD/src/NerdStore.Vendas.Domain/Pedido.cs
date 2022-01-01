@@ -6,7 +6,7 @@ using FluentValidation.Results;
 
 namespace NerdStore.Vendas.Domain
 {
-    public class Pedido
+    public class Pedido: Entity
     {
         public static int MAX_UNIDADES_ITEM => 15;
 
