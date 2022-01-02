@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NerdStore.Vendas.Data.Migrations
 {
-    public partial class Final : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,15 +15,15 @@ namespace NerdStore.Vendas.Data.Migrations
                 name: "Vouchers",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Codigo = table.Column<string>(type: "varchar(100)", nullable: false),
-                    PercentualDesconto = table.Column<decimal>(nullable: true),
-                    ValorDesconto = table.Column<decimal>(nullable: true),
-                    Quantidade = table.Column<int>(nullable: false),
-                    TipoDescontoVoucher = table.Column<int>(nullable: false),
-                    DataValidade = table.Column<DateTime>(nullable: false),
-                    Ativo = table.Column<bool>(nullable: false),
-                    Utilizado = table.Column<bool>(nullable: false)
+                    PercentualDesconto = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    ValorDesconto = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    TipoDescontoVoucher = table.Column<int>(type: "int", nullable: false),
+                    DataValidade = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Ativo = table.Column<bool>(type: "bit", nullable: false),
+                    Utilizado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -34,15 +34,15 @@ namespace NerdStore.Vendas.Data.Migrations
                 name: "Pedidos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    Codigo = table.Column<int>(nullable: false, defaultValueSql: "NEXT VALUE FOR MinhaSequencia"),
-                    ClienteId = table.Column<Guid>(nullable: false),
-                    VoucherId = table.Column<Guid>(nullable: true),
-                    ValorTotal = table.Column<decimal>(nullable: false),
-                    PedidoStatus = table.Column<int>(nullable: false),
-                    Desconto = table.Column<decimal>(nullable: false),
-                    DataCadastro = table.Column<DateTime>(nullable: false),
-                    VoucherUtilizado = table.Column<bool>(nullable: false)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Codigo = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR MinhaSequencia"),
+                    ClienteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    VoucherId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ValorTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    PedidoStatus = table.Column<int>(type: "int", nullable: false),
+                    Desconto = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    VoucherUtilizado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -59,12 +59,12 @@ namespace NerdStore.Vendas.Data.Migrations
                 name: "PedidoItems",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    PedidoId = table.Column<Guid>(nullable: false),
-                    ProdutoId = table.Column<Guid>(nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PedidoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ProdutoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProdutoNome = table.Column<string>(type: "varchar(250)", nullable: false),
-                    Quantidade = table.Column<int>(nullable: false),
-                    ValorUnitario = table.Column<decimal>(nullable: false)
+                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    ValorUnitario = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
