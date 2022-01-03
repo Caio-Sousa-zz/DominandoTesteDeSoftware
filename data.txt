@@ -1,0 +1,5 @@
+Add-Migration 'Name' -Context ApplicationDbContext
+
+
+
+Update-database -Context ApplicationDbContext
