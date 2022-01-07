@@ -55,7 +55,7 @@ namespace NerdStore.WebApp.Tests.Config
         {
             var userData = new LoginViewModel
             {
-                Email = "teste@teste.com",
+                Email = "teste1@teste.com",
                 Senha = "Teste@123"
             };
 
@@ -77,7 +77,7 @@ namespace NerdStore.WebApp.Tests.Config
             var formData = new Dictionary<string, string>
             {
                 {AntiForgeryFieldName, antiForgeryToken},
-                {"Input.Email", "teste@teste.com"},
+                {"Input.Email", "teste1@teste.com"},
                 {"Input.Password", "Teste@123"}
             };
 

@@ -25,7 +25,7 @@ namespace NerdStore.WebApp.Tests
         public async Task AdicionarItem_NovoPedido_DeveAtualizarValorTotal()
         {
             // Arrange
-            var produtoId = new Guid("191ddd3e-acd4-4c3b-ae74-8e473993c5da");
+            var produtoId = new Guid("303ad1dc-0b34-4525-d7cf-08d943abc273");
             const int quantidade = 2;
 
             var initialResponse = await _testsFixture.Client.GetAsync($"/produto-detalhe/{produtoId}");
