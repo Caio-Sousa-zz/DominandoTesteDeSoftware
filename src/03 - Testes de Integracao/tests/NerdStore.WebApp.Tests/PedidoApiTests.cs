@@ -1,11 +1,10 @@
-﻿using System;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
-using Features.Tests;
+﻿using Features.Tests;
 using NerdStore.WebApp.MVC;
 using NerdStore.WebApp.MVC.Models;
 using NerdStore.WebApp.Tests.Config;
+using System;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace NerdStore.WebApp.Tests
@@ -28,7 +27,7 @@ namespace NerdStore.WebApp.Tests
             // Arrange
             var itemInfo = new ItemViewModel
             {
-                Id = new Guid("191ddd3e-acd4-4c3b-ae74-8e473993c5da"),
+                Id = new Guid("303ad1dc-0b34-4525-d7cf-08d943abc273"),
                 Quantidade = 2
             };
 
@@ -47,7 +46,7 @@ namespace NerdStore.WebApp.Tests
         public async Task RemoverItem_PedidoExistente_DeveRetornarComSucesso()
         {
             // Arrange
-            var produtoId = new Guid("191ddd3e-acd4-4c3b-ae74-8e473993c5da");
+            var produtoId = new Guid("303ad1dc-0b34-4525-d7cf-08d943abc273");
             await _testsFixture.RealizarLoginApi();
             _testsFixture.Client.AtribuirToken(_testsFixture.UsuarioToken);
 
